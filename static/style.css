@@ -1,0 +1,169 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.result {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.video-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.video-item {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.video-link {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s ease;
+}
+
+.video-link:hover {
+    transform: translateY(-5px);
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.video-info {
+    padding: 10px;
+}
+
+.video-info h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.video-info p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.video-list li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.video-list img {
+    width: 120px;
+    height: 90px;
+    display: block;
+    margin: 0 auto;
+}
+
+.video-list p {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 15px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .15s ease-in-out;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
+    margin-top: 10px; /* Espacio arriba de la barra deslizable */
+}
+
+.slider-container input {
+    flex: 1; /* La barra deslizable ocupa todo el espacio disponible */
+    margin-left: 10px; /* Espacio entre el span y el input */
+}
+
+.slider-container span {
+    margin-left: 10px; /* Espacio entre el número y la barra deslizable */
+    font-size: 16px; /* Tamaño de fuente para el número */
+    font-weight: bold; /* Texto en negrita para resaltar el número */
+    color: #333; /* Color del texto */
+}

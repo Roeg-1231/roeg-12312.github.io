@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evaluador de Estrés</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function updateSliderValue(sliderId) {
+            var slider = document.getElementById(sliderId);
+            var output = document.getElementById('value' + sliderId.slice(1)); // Obtener el span correspondiente
+            output.innerHTML = slider.value; // Mostrar el valor seleccionado
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Formulario de Evaluación de Estrés</h2>
+        <h3>Autoria: Anjaly Saory Georgia Chávez Uscata</h3>
+        <form action="{{ url_for('predict') }}" method="post">
+            {% for question in questions %}
+            <div class="form-group">
+                <label>{{ question }}</label>
+                <div class="slider-container">
+                    <input type="range" name="q{{ loop.index }}" min="1" max="5" step="1" value="3" class="slider" id="q{{ loop.index }}" oninput="updateSliderValue(this.id)">
+                    <span id="value{{ loop.index }}">3</span> <!-- Mostrará el valor seleccionado -->
+                </div>
+            </div>                   
+            {% endfor %}
+            <div>
+                <button type="submit" class="btn">Enviar</button>
+            </div>
+        </form>
+        {% if prediction_text %}
+        <div class="result">
+            <h3>{{ prediction_text }}</h3>
+            <p>{{ details }}</p>
+            <ul class="video-list">
+                {% for video in music_videos %}
+                <li class="video-item">
+                    <a href="{{ video.url }}" target="_blank" class="video-link">
+                        <div class="video-thumbnail">
+                            <img src="{{ video.thumbnail }}" alt="{{ video.title }}">
+                        </div>
+                        <div class="video-info">
+                            <h4>{{ video.title }}</h4>
+                            <p>{{ video.description }}</p>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>            
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
